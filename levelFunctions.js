@@ -190,3 +190,61 @@ function resetLevel() {
     }
   }
 }
+
+//
+// Mouse Clicked Functions
+//
+
+function mouseClicked() {
+  for (var i = 0; i < NUM_OBJECTS; i++) {
+    if (mouseX >= bubbles[i].xpos - 15 && mouseX <= bubbles[i].xpos + 15 &&
+      mouseY >= bubbles[i].ypos - 15 && mouseY <= bubbles[i].ypos + 15) {
+      objectsCaptured++;
+      bubbleCaptured++;
+      bubbles[i].xpos = -100;
+      bubbles[i].ypos = -100;
+    }
+    if (mouseX >= shakeys[i].xpos - 15 && mouseX <= shakeys[i].xpos + 15 &&
+      mouseY >= shakeys[i].ypos - 15 && mouseY <= shakeys[i].ypos + 15) {
+      objectsCaptured++;
+      shakeyCaptured++;
+      shakeys[i].xpos = -100;
+      shakeys[i].ypos = -100;
+    }
+  }
+}
+
+//
+// for IOS mouseClicked does not seem to work
+//
+function touchStarted() {
+  for (var i = 0; i < NUM_OBJECTS; i++) {
+    if (mouseX >= bubbles[i].xpos - 15 && mouseX <= bubbles[i].xpos + 15 &&
+      mouseY >= bubbles[i].ypos - 15 && mouseY <= bubbles[i].ypos + 15) {
+      objectsCaptured++;
+      bubbleCaptured++;
+      bubbles[i].xpos = -100;
+      bubbles[i].ypos = -100;
+    }
+    if (mouseX >= shakeys[i].xpos - 15 && mouseX <= shakeys[i].xpos + 15 &&
+      mouseY >= shakeys[i].ypos - 15 && mouseY <= shakeys[i].ypos + 15) {
+      objectsCaptured++;
+      shakeyCaptured++;
+      shakeys[i].xpos = -100;
+      shakeys[i].ypos = -100;
+    }
+  }
+}
+
+//
+//
+//
+
+function displayScores() {
+  let b = [];
+  let s = [];
+
+  for (var i = 1; i < NUM_LEVELS; i++) {
+
+  }
+}
