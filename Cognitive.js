@@ -16,7 +16,7 @@ let bubbleCaptured = 0;
 let shakeyCaptured = 0;
 
 let levelDisplayed = "Level 1";
-let instructionDisplayed = "Choose ANY" + OBJECTS_CHOSEN + " items";
+let instructionDisplayed = "Choose any " + OBJECTS_CHOSEN + " items";
 let scoreDisplayedL1 = "";
 let scoreDisplayedL2 = "";
 
@@ -32,7 +32,7 @@ function draw() {
   fill("white");
   rect(0, 0, 480, 640);
   fill("red");
-  textSize(14);
+  textSize(16);
   levelDisplayed = "Playing Level " + gameLevel;
   text(levelDisplayed, 20, 20);
   text(instructionDisplayed, 20, 35);
