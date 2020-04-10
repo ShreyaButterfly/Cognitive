@@ -12,6 +12,7 @@ let levelScore;
 let NUM_OBJECTS = 40;
 let MAX_REPEAT_LEVEL = 2;
 let OBJECTS_CHOSEN = 4;
+let NUM_LEVELS = 6;
 let bubbleCaptured = 0;
 let shakeyCaptured = 0;
 
@@ -43,16 +44,9 @@ function draw() {
   text(levelDisplayed, 20, 20);
   text(instructionDisplayed, 20, 35);
 
-  if (gameLevel > 6) {
-    fill(255, 255, 255);
-    rect(0, 0, 480, 640);
-    fill("red");
-    scoreDisplayed1 = "Bubbles " + (bubbleCaptured / (NUM_OBJECTS / 2 * 5));
-    scoreDisplayed2 = "Shakeys " + (shakeyCaptured / (NUM_OBJECTS / 2 * 5));
-    stroke("red");
-    text(scoreDisplayed1, 20, 40);
-    text(scoreDisplayed2, 240, 40);
-    return;
+  if (gameLevel > NUM_LEVELS) {
+    displayScores();
+
   }
 
   if (gameLevel == 1) {
