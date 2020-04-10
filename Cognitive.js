@@ -59,7 +59,7 @@ function draw() {
     fLevelSix();
   }
 
-  if (gameLevel > 6) {
+  if (gameLevel > 7) {
     fill(255, 255, 255);
     rect(0, 0, 480, 640);
     fill("red");
@@ -90,4 +90,25 @@ function mouseClicked() {
       shakeys[i].ypos = -100;
     }
   }
+}
+
+
+function touchStarted() {
+  for (var i = 0; i < NUM_OBJECTS; i++) {
+    if (mouseX >= bubbles[i].xpos - 15 && mouseX <= bubbles[i].xpos + 15 &&
+      mouseY >= bubbles[i].ypos - 15 && mouseY <= bubbles[i].ypos + 15) {
+      objectsCaptured++;
+      bubbleCaptured++;
+      bubbles[i].xpos = -100;
+      bubbles[i].ypos = -100;
+    }
+    if (mouseX >= shakeys[i].xpos - 15 && mouseX <= shakeys[i].xpos + 15 &&
+      mouseY >= shakeys[i].ypos - 15 && mouseY <= shakeys[i].ypos + 15) {
+      objectsCaptured++;
+      shakeyCaptured++;
+      shakeys[i].xpos = -100;
+      shakeys[i].ypos = -100;
+    }
+  }
+
 }
