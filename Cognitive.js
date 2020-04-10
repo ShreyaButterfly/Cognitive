@@ -43,6 +43,17 @@ function draw() {
   text(levelDisplayed, 20, 20);
   text(instructionDisplayed, 20, 35);
 
+  if (gameLevel > 2) {
+    fill(255, 255, 255);
+    rect(0, 0, 480, 640);
+    fill("red");
+    scoreDisplayed1 = "Bubbles " + (bubbleCaptured / (NUM_OBJECTS / 2 * 5));
+    scoreDisplayed2 = "Shakeys " + (shakeyCaptured / (NUM_OBJECTS / 2 * 5));
+    stroke("red");
+    text(scoreDisplayed1, 20, 40);
+    text(scoreDisplayed2, 240, 40);
+    return;
+  }
 
 
   if (gameLevel == 1) {
@@ -59,16 +70,7 @@ function draw() {
     fLevelSix();
   }
 
-  if (gameLevel > 7) {
-    fill(255, 255, 255);
-    rect(0, 0, 480, 640);
-    fill("red");
-    scoreDisplayed1 = "Bubbles " + (bubbleCaptured / (NUM_OBJECTS / 2 * 5));
-    scoreDisplayed2 = "Shakeys " + (shakeyCaptured / (NUM_OBJECTS / 2 * 5));
-    stroke("red");
-    text(scoreDisplayed1, 20, 40);
-    text(scoreDisplayed2, 240, 40);
-  }
+
 
 }
 
@@ -91,7 +93,6 @@ function mouseClicked() {
     }
   }
 }
-
 
 function touchStarted() {
   for (var i = 0; i < NUM_OBJECTS; i++) {
