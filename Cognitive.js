@@ -32,9 +32,10 @@ function draw() {
   fill("white");
   rect(0, 0, 480, 640);
   fill("red");
-  textSize(20);
+  textSize(14);
   levelDisplayed = "Playing Level " + gameLevel;
   text(levelDisplayed, 20, 20);
+  text(instructionDisplayed, 20, 35);
 
 
 
