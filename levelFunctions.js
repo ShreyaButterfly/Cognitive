@@ -243,8 +243,16 @@ function touchStarted() {
 function displayScores() {
   let b = [];
   let s = [];
+  fill(255, 255, 255);
+  rect(0, 0, 480, 640);
+  fill("red");
+  scoreDisplayed1 = "Bubbles " + (bubbleCaptured / (NUM_OBJECTS / 2 * 5));
+  scoreDisplayed2 = "Shakeys " + (shakeyCaptured / (NUM_OBJECTS / 2 * 5));
+  stroke("red");
+  text(scoreDisplayed1, 20, 40);
+  text(scoreDisplayed2, 240, 40);
 
   for (var i = 1; i < NUM_LEVELS; i++) {
-
+    text("Level " + NUM_LEVELS + ":", 20, i * 20);
   }
 }
