@@ -15,10 +15,16 @@ let OBJECTS_CHOSEN = 4;
 let bubbleCaptured = 0;
 let shakeyCaptured = 0;
 
-let levelDisplayed = "Level 1";
+let levelDisplayed = "";
 let instructionDisplayed = "Choose any " + OBJECTS_CHOSEN + " items";
 let scoreDisplayedL1 = "";
 let scoreDisplayedL2 = "";
+
+
+{
+
+
+}
 
 
 function setup() {
@@ -49,9 +55,11 @@ function draw() {
     fLevelFour();
   } else if (gameLevel == 5) {
     fLevelFive();
+  } else if (gameLevel == 6) {
+    fLevelSix();
   }
 
-  if (gameLevel > 5) {
+  if (gameLevel > 6) {
     fill(255, 255, 255);
     rect(0, 0, 480, 640);
     fill("red");
