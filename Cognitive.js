@@ -1,3 +1,9 @@
+//
+// This program displays a series of shaking
+// and static bubbles of different colors to
+// evaluate user preferences.
+//
+
 let bubbles = [];
 let shakeys = [];
 let gameLevel = 1;
@@ -10,9 +16,10 @@ let bubbleCaptured = 0;
 let shakeyCaptured = 0;
 
 let levelDisplayed = "Level 1";
-let instructionDisplayed = "Choose NY 4 items";
-let scoreDisplayed1 = "";
-let scoreDisplayed2 = "";
+let instructionDisplayed = "Choose ANY" + OBJECTS_CHOSEN + " items";
+let scoreDisplayedL1 = "";
+let scoreDisplayedL2 = "";
+
 
 function setup() {
   colorMode(RGB, 200);
@@ -29,16 +36,7 @@ function draw() {
   levelDisplayed = "Playing Level " + gameLevel;
   text(levelDisplayed, 20, 20);
 
-  if (gameLevel > 5) {
-    fill(255, 255, 255);
-    rect(0, 0, 480, 640);
-    fill("red");
-    scoreDisplayed1 = "Bubbles " + (bubbleCaptured / (NUM_OBJECTS / 2 * 5));
-    scoreDisplayed2 = "Shakeys " + (shakeyCaptured / (NUM_OBJECTS / 2 * 5));
-    stroke("red");
-    text(scoreDisplayed1, 20, 40);
-    text(scoreDisplayed2, 240, 40);
-  }
+
 
   if (gameLevel == 1) {
     fLevelOne();
@@ -50,6 +48,17 @@ function draw() {
     fLevelFour();
   } else if (gameLevel == 5) {
     fLevelFive();
+  }
+
+  if (gameLevel > 5) {
+    fill(255, 255, 255);
+    rect(0, 0, 480, 640);
+    fill("red");
+    scoreDisplayed1 = "Bubbles " + (bubbleCaptured / (NUM_OBJECTS / 2 * 5));
+    scoreDisplayed2 = "Shakeys " + (shakeyCaptured / (NUM_OBJECTS / 2 * 5));
+    stroke("red");
+    text(scoreDisplayed1, 20, 40);
+    text(scoreDisplayed2, 240, 40);
   }
 
 }
