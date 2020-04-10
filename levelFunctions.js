@@ -90,6 +90,24 @@ function fLevelFive() {
   }
 }
 
+function fLevelSix() {
+  if (gameLevel == 6 && repeatLevel <= MAX_REPEAT_LEVEL) {
+    for (let i = 0; i < NUM_OBJECTS / 2; i++) {
+      bubbles[i].Display();
+      shakeys[i].Display();
+      if (objectsCaptured >= 4) {
+        repeatLevel = repeatLevel + 1;
+        resetObjects();
+        if (repeatLevel > MAX_REPEAT_LEVEL) {
+          gameLevel = gameLevel + 1;
+          resetLevel();
+          return;
+        }
+      }
+    }
+  }
+}
+
 
 function resetObjects() {
 
@@ -116,9 +134,14 @@ function resetObjects() {
   } else if (gameLevel == 4) {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
       bubbles.push(new Bubble(random(20, 400), random(60, 600), 0, 0, 255));
-      shakeys.push(new Bubble(random(20, 400), random(60, 600), 255, 0, 0));
+      shakeys.push(new Shakey(random(20, 400), random(60, 600), 255, 0, 0));
     }
   } else if (gameLevel == 5) {
+    for (let i = 0; i < NUM_OBJECTS / 2; i++) {
+      bubbles.push(new Bubble(random(20, 400), random(60, 600), 0, 0, 255));
+      shakeys.push(new Bubble(random(20, 400), random(60, 600), 255, 0, 0));
+    }
+  } else if (gameLevel == 6) {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
       bubbles.push(new Shakey(random(20, 400), random(60, 600), 0, 0, 255));
       shakeys.push(new Shakey(random(20, 400), random(60, 600), 255, 0, 0));
@@ -153,9 +176,14 @@ function resetLevel() {
   } else if (gameLevel == 4) {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
       bubbles.push(new Bubble(random(20, 400), random(60, 600), 0, 0, 255));
-      shakeys.push(new Bubble(random(20, 400), random(60, 600), 255, 0, 0));
+      shakeys.push(new Shakey(random(20, 400), random(60, 600), 255, 0, 0));
     }
   } else if (gameLevel == 5) {
+    for (let i = 0; i < NUM_OBJECTS / 2; i++) {
+      bubbles.push(new Bubble(random(20, 400), random(60, 600), 0, 0, 255));
+      shakeys.push(new Shakey(random(20, 400), random(60, 600), 255, 0, 0));
+    }
+  } else if (gameLevel == 6) {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
       bubbles.push(new Shakey(random(20, 400), random(60, 600), 0, 0, 255));
       shakeys.push(new Shakey(random(20, 400), random(60, 600), 255, 0, 0));
