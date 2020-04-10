@@ -181,7 +181,7 @@ function resetLevel() {
   } else if (gameLevel == 5) {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
       bubbles.push(new Bubble(random(20, 400), random(60, 600), 0, 0, 255));
-      shakeys.push(new Shakey(random(20, 400), random(60, 600), 255, 0, 0));
+      shakeys.push(new Bubble(random(20, 400), random(60, 600), 255, 0, 0));
     }
   } else if (gameLevel == 6) {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
