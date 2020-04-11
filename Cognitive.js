@@ -2,6 +2,7 @@
 // This program displays a series of shaking
 // and static bubbles of different colors to
 // evaluate user preferences.
+// Shreya Balaji (sbalaji2021@berkeleycarroll.org)
 //
 
 let bubbles = [];
