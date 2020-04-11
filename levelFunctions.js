@@ -248,54 +248,51 @@ function displayScores() {
 
   fill(255, 255, 255);
   rect(0, 0, 480, 640);
-  fill("red");
-  //scoreDisplayed1 = "Bubbles " + (bubbleCaptured / (NUM_OBJECTS / 2 * 5));
-  //scoreDisplayed2 = "Shakeys " + (shakeyCaptured / (NUM_OBJECTS / 2 * 5));
-  stroke("red");
-  //text(scoreDisplayed1, 20, 40);
-  //text(scoreDisplayed2, 240, 40);
-
+  fill(170,56,78);
+  //stroke("red");
   for (var i = 0; i <= NUM_LEVELS; i++) {
-    //br = [];
-    //sr = [];
-    //bb = [];
-    //sb = [];
 
     bb.push(new Bubble(20, i * 50 + 50, 0, 0, 255));
     br.push(new Bubble(20, i * 50 + 50, 255, 0, 0));
-    sb.push(new Shakey(100, i * 50 + 50, 0, 0, 255));
-    sr.push(new Shakey(100, i * 50 + 50, 255, 0, 0));
+    sb.push(new Shakey(300, i * 50 + 50, 0, 0, 255));
+    sr.push(new Shakey(300, i * 50 + 50, 255, 0, 0));
 
     switch (i) {
-      case 0:
+      case 1:
+        text("Level " + i + ":", 130, i * 50+55);
         bb[i].Display();
         sb[i].Display();
-        break;
-      case 1:
-        br[i].Display();
-        sr[i].Display();
         break;
       case 2:
         br[i].Display();
-        sb[i].Display();
+        sr[i].Display();
+        text("Level " + i + ":", 130, i * 50+55);
         break;
       case 3:
-        bb[i].Display();
-        sr[i].Display();
+        br[i].Display();
+        sb[i].Display();
+        text("Level " + i + ":", 130, i * 50+55);
         break;
       case 4:
         bb[i].Display();
-        br[i].Display();
+        sr[i].Display();
+        text("Level " + i + ":", 130, i * 50+55);
         break;
       case 5:
+        bb[i].Display();
+        br[i].Display();
+        text("Level " + i + ":", 130, i * 50+55);
+        break;
+      case 6:
         sb[i].Display();
         sr[i].Display();
+        text("Level " + i + ":", 130, i * 50+55);
         break;
       default:
 
     }
 
-    text("Level " + i + ":", 20, i * 50);
+
 
 
   }
