@@ -12,7 +12,7 @@ let levelScore;
 let NUM_OBJECTS = 40;
 let MAX_REPEAT_LEVEL = 2;
 let OBJECTS_CHOSEN = 4;
-let NUM_LEVELS = 6;
+let NUM_LEVELS = 4;
 let bubbleCaptured = 0;
 let shakeyCaptured = 0;
 
@@ -21,11 +21,6 @@ let instructionDisplayed = "Choose any " + OBJECTS_CHOSEN + " items";
 let scoreDisplayedL1 = "";
 let scoreDisplayedL2 = "";
 
-
-{
-
-
-}
 
 
 function setup() {
@@ -46,7 +41,7 @@ function draw() {
 
   if (gameLevel > NUM_LEVELS) {
     displayScores();
-
+    return;
   }
 
   if (gameLevel == 1) {

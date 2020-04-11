@@ -241,8 +241,11 @@ function touchStarted() {
 //
 
 function displayScores() {
-  let b = [];
-  let s = [];
+  let br = [];
+  let sr = [];
+  let bb = [];
+  let sb = [];
+
   fill(255, 255, 255);
   rect(0, 0, 480, 640);
   fill("red");
@@ -252,7 +255,48 @@ function displayScores() {
   //text(scoreDisplayed1, 20, 40);
   //text(scoreDisplayed2, 240, 40);
 
-  for (var i = 1; i < NUM_LEVELS; i++) {
-    text("Level " + i + ":", 20, i * 40);
+  for (var i = 0; i <= NUM_LEVELS; i++) {
+    //br = [];
+    //sr = [];
+    //bb = [];
+    //sb = [];
+
+    bb.push(new Bubble(20, i * 50 + 50, 0, 0, 255));
+    br.push(new Bubble(20, i * 50 + 50, 255, 0, 0));
+    sb.push(new Shakey(100, i * 50 + 50, 0, 0, 255));
+    sr.push(new Shakey(100, i * 50 + 50, 255, 0, 0));
+
+    switch (i) {
+      case 0:
+        bb[i].Display();
+        sb[i].Display();
+        break;
+      case 1:
+        br[i].Display();
+        sr[i].Display();
+        break;
+      case 2:
+        br[i].Display();
+        sb[i].Display();
+        break;
+      case 3:
+        bb[i].Display();
+        sr[i].Display();
+        break;
+      case 4:
+        bb[i].Display();
+        br[i].Display();
+        break;
+      case 5:
+        sb[i].Display();
+        sr[i].Display();
+        break;
+      default:
+
+    }
+
+    text("Level " + i + ":", 20, i * 50);
+
+
   }
 }
