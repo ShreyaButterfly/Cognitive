@@ -2,7 +2,6 @@
 // This program displays a series of shaking
 // and static bubbles of different colors to
 // evaluate user preferences.
-// Shreya Balaji (sbalaji2021@berkeleycarroll.org)
 //
 
 let bubbles = [];
@@ -13,7 +12,7 @@ let levelScore;
 let NUM_OBJECTS = 40;
 let MAX_REPEAT_LEVEL = 2;
 let OBJECTS_CHOSEN = 4;
-let NUM_LEVELS = 5;
+let NUM_LEVELS = 6;
 let bubbleCaptured = 0;
 let shakeyCaptured = 0;
 
@@ -22,6 +21,11 @@ let instructionDisplayed = "Choose any " + OBJECTS_CHOSEN + " items";
 let scoreDisplayedL1 = "";
 let scoreDisplayedL2 = "";
 
+
+{
+
+
+}
 
 
 function setup() {
@@ -33,6 +37,7 @@ function setup() {
 
 function draw() {
   fill("white");
+  strokeWeight(3);
   rect(0, 0, 480, 640);
   fill("red");
   textSize(16);
@@ -40,7 +45,10 @@ function draw() {
   text(levelDisplayed, 20, 20);
   text(instructionDisplayed, 20, 35);
 
-
+  if (gameLevel > NUM_LEVELS) {
+    displayScores();
+    return;
+  }
 
   if (gameLevel == 1) {
     fLevelOne();
@@ -54,9 +62,5 @@ function draw() {
     fLevelFive();
   } else if (gameLevel == 6) {
     fLevelSix();
-  }
-
-  if (gameLevel > NUM_LEVELS) {
-    displayScores();
   }
 }

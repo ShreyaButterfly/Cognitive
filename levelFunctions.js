@@ -241,59 +241,76 @@ function touchStarted() {
 //
 
 function displayScores() {
-  let br = [];
-  let sr = [];
-  let bb = [];
-  let sb = [];
+  let br = new Bubble(20, 50, 255, 0, 0);
+  let sr = new Shakey(20, 50, 255, 0, 0);
+  let bb = new Bubble(20, 50, 0, 0, 255);
+  let sb = new Shakey(20, 50, 0, 0, 255)
 
   fill(255, 255, 255);
   rect(0, 0, 480, 640);
-  fill(170,56,78);
-  //stroke("red");
-  for (var i = 0; i <= NUM_LEVELS; i++) {
+  text("Final Score", 30, 30);
+  fill(170, 56, 78);
 
-    bb.push(new Bubble(20, i * 50 + 50, 0, 0, 255));
-    br.push(new Bubble(20, i * 50 + 50, 255, 0, 0));
-    sb.push(new Shakey(300, i * 50 + 50, 0, 0, 255));
-    sr.push(new Shakey(300, i * 50 + 50, 255, 0, 0));
+  for (var i = 0; i <= NUM_LEVELS; i++) {
 
     switch (i) {
       case 1:
-        text("Level " + i + ":", 130, i * 50+55);
-        bb[i].Display();
-        sb[i].Display();
+        bb.xpos = 80;
+        bb.ypos = 80;
+        sb.xpos = 430;
+        sb.ypos = 80;
+        text("Level " + i + ":", 200, 80);
+        bb.Display();
+        sb.Display();
         break;
       case 2:
-        br[i].Display();
-        sr[i].Display();
-        text("Level " + i + ":", 130, i * 50+55);
+        br.xpos = 80;
+        br.ypos = 160
+        sr.xpos = 430;
+        sr.ypos = 160
+        br.Display();
+        sr.Display();
+        text("Level " + i + ":", 200, 160);
         break;
       case 3:
-        br[i].Display();
-        sb[i].Display();
-        text("Level " + i + ":", 130, i * 50+55);
+        br.xpos = 80;
+        br.ypos = 240;
+        sb.xpos = 430;
+        sb.ypos = 240;
+        br.Display();
+        sb.Display();
+        text("Level " + i + ":", 200, 240);
         break;
       case 4:
-        bb[i].Display();
-        sr[i].Display();
-        text("Level " + i + ":", 130, i * 50+55);
+        bb.xpos = 80;
+        bb.ypos = 320;
+        sr.xpos = 430;
+        sr.ypos = 320;
+        bb.Display();
+        sr.Display();
+        text("Level " + i + ":", 200, 320);
         break;
       case 5:
-        bb[i].Display();
-        br[i].Display();
-        text("Level " + i + ":", 130, i * 50+55);
+        bb.xpos = 80;
+        bb.ypos = 400;
+        br.xpos = 430;
+        br.ypos = 400;
+
+        bb.Display();
+        br.Display();
+        text("Level " + i + ":", 200, 400);
         break;
       case 6:
-        sb[i].Display();
-        sr[i].Display();
-        text("Level " + i + ":", 130, i * 50+55);
+        sb.xpos = 80;
+        sb.ypos = 480;
+        sr.xpos = 430;
+        sr.ypos = 480;
+        sb.Display();
+        sr.Display();
+        text("Level " + i + ":", 200, 480);
         break;
       default:
 
     }
-
-
-
-
   }
 }
