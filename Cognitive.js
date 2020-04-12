@@ -3,7 +3,6 @@
 // and static bubbles of different colors to
 // evaluate user preferences.
 //
-
 let bubbles = [];
 let shakeys = [];
 let gameLevel = 1;
@@ -21,12 +20,9 @@ let instructionDisplayed = "Choose any " + OBJECTS_CHOSEN + " items";
 let scoreDisplayedL1 = "";
 let scoreDisplayedL2 = "";
 
-
-{
-
-
-}
-
+let l11, l12, l21, l22, l31, l32, l41, l42, l51, l52, l61, l62;
+l11 = l12 = l21 = l22 = l31 = l32 = 0;
+l41 = l42 = l51 = l52 = l61 = l62 = 0;
 
 function setup() {
   colorMode(RGB, 200);

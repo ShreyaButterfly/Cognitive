@@ -8,6 +8,8 @@ function fLevelOne() {
         resetObjects();
         if (repeatLevel > MAX_REPEAT_LEVEL) {
           gameLevel = gameLevel + 1;
+          l11 += bubbleCaptured;
+          l12 += shakeyCaptured;
           resetLevel();
           return;
         }
@@ -27,6 +29,8 @@ function fLevelTwo() {
         resetObjects();
         if (repeatLevel > MAX_REPEAT_LEVEL) {
           gameLevel = gameLevel + 1;
+          l21 += bubbleCaptured;
+          l22 += shakeyCaptured;
           resetLevel();
           return;
         }
@@ -46,6 +50,8 @@ function fLevelThree() {
         resetObjects();
         if (repeatLevel > MAX_REPEAT_LEVEL) {
           gameLevel = gameLevel + 1;
+          l31 += bubbleCaptured;
+          l32 += shakeyCaptured;
           resetLevel();
           return;
         }
@@ -64,6 +70,8 @@ function fLevelFour() {
         resetObjects();
         if (repeatLevel > MAX_REPEAT_LEVEL) {
           gameLevel = gameLevel + 1;
+          l41 += bubbleCaptured;
+          l42 += shakeyCaptured;
           resetLevel();
           return;
         }
@@ -82,6 +90,8 @@ function fLevelFive() {
         resetObjects();
         if (repeatLevel > MAX_REPEAT_LEVEL) {
           gameLevel = gameLevel + 1;
+          l51 += bubbleCaptured;
+          l52 += shakeyCaptured;
           resetLevel();
           return;
         }
@@ -100,6 +110,8 @@ function fLevelSix() {
         resetObjects();
         if (repeatLevel > MAX_REPEAT_LEVEL) {
           gameLevel = gameLevel + 1;
+          l61 += bubbleCaptured;
+          l62 += shakeyCaptured;
           resetLevel();
           return;
         }
@@ -157,6 +169,8 @@ function resetLevel() {
   shakeys = [];
   objectsCaptured = 0;
   repeatLevel = 1;
+  bubbleCaptured = 0;
+  shakeyCaptured = 0;
 
   if (gameLevel == 1) {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
@@ -217,23 +231,27 @@ function mouseClicked() {
 //
 // for IOS mouseClicked does not seem to work
 //
+// function touchStarted() {
+//   for (var i = 0; i < NUM_OBJECTS; i++) {
+//     if (mouseX >= bubbles[i].xpos - 15 && mouseX <= bubbles[i].xpos + 15 &&
+//       mouseY >= bubbles[i].ypos - 15 && mouseY <= bubbles[i].ypos + 15) {
+//       objectsCaptured++;
+//       bubbleCaptured++;
+//       bubbles[i].xpos = -100;
+//       bubbles[i].ypos = -100;
+//     }
+//     if (mouseX >= shakeys[i].xpos - 15 && mouseX <= shakeys[i].xpos + 15 &&
+//       mouseY >= shakeys[i].ypos - 15 && mouseY <= shakeys[i].ypos + 15) {
+//       objectsCaptured++;
+//       shakeyCaptured++;
+//       shakeys[i].xpos = -100;
+//       shakeys[i].ypos = -100;
+//     }
+//   }
+// }
+
 function touchStarted() {
-  for (var i = 0; i < NUM_OBJECTS; i++) {
-    if (mouseX >= bubbles[i].xpos - 15 && mouseX <= bubbles[i].xpos + 15 &&
-      mouseY >= bubbles[i].ypos - 15 && mouseY <= bubbles[i].ypos + 15) {
-      objectsCaptured++;
-      bubbleCaptured++;
-      bubbles[i].xpos = -100;
-      bubbles[i].ypos = -100;
-    }
-    if (mouseX >= shakeys[i].xpos - 15 && mouseX <= shakeys[i].xpos + 15 &&
-      mouseY >= shakeys[i].ypos - 15 && mouseY <= shakeys[i].ypos + 15) {
-      objectsCaptured++;
-      shakeyCaptured++;
-      shakeys[i].xpos = -100;
-      shakeys[i].ypos = -100;
-    }
-  }
+  mouseClicked();
 }
 
 //
@@ -248,21 +266,32 @@ function displayScores() {
 
   fill(255, 255, 255);
   rect(0, 0, 480, 640);
+
+  textSize(14);
+  //fill(170, 56, 78);
   text("Final Score", 30, 30);
-  fill(170, 56, 78);
+
 
   for (var i = 0; i <= NUM_LEVELS; i++) {
-
+    textSize(14);
     switch (i) {
       case 1:
         bb.xpos = 80;
         bb.ypos = 80;
         sb.xpos = 430;
         sb.ypos = 80;
-        text("Level " + i + ":", 200, 80);
         bb.Display();
         sb.Display();
+
+        textSize(14);
+        fill(170, 56, 78);
+        text("Level " + i + ":", 200, 80);
+        textSize(14);
+        fill(170, 56, 78);
+        text(l11 + " / " + MAX_REPEAT_LEVEL * NUM_OBJECTS / 2, 120, 80);
+        text(l12 + " / " + MAX_REPEAT_LEVEL * NUM_OBJECTS / 2, 350, 80);
         break;
+
       case 2:
         br.xpos = 80;
         br.ypos = 160
@@ -270,7 +299,12 @@ function displayScores() {
         sr.ypos = 160
         br.Display();
         sr.Display();
+
+        textSize(14);
+        fill(170, 56, 78);
         text("Level " + i + ":", 200, 160);
+        text(l21 + " / " + MAX_REPEAT_LEVEL * NUM_OBJECTS / 2, 120, 160);
+        text(l22 + " / " + MAX_REPEAT_LEVEL * NUM_OBJECTS / 2, 350, 160);
         break;
       case 3:
         br.xpos = 80;
@@ -279,6 +313,10 @@ function displayScores() {
         sb.ypos = 240;
         br.Display();
         sb.Display();
+        textSize(14);
+        fill(170, 56, 78);
+        text(l31 + " / " + MAX_REPEAT_LEVEL * NUM_OBJECTS / 2, 120, 240);
+        text(l32 + " / " + MAX_REPEAT_LEVEL * NUM_OBJECTS / 2, 350, 240);
         text("Level " + i + ":", 200, 240);
         break;
       case 4:
@@ -288,7 +326,10 @@ function displayScores() {
         sr.ypos = 320;
         bb.Display();
         sr.Display();
+        textSize(14);
         text("Level " + i + ":", 200, 320);
+        text(l41 + " / " + MAX_REPEAT_LEVEL * NUM_OBJECTS / 2, 120, 320);
+        text(l42 + " / " + MAX_REPEAT_LEVEL * NUM_OBJECTS / 2, 350, 320);
         break;
       case 5:
         bb.xpos = 80;
@@ -299,6 +340,10 @@ function displayScores() {
         bb.Display();
         br.Display();
         text("Level " + i + ":", 200, 400);
+        textSize(14);
+        fill(170, 56, 78);
+        text(l51 + " / " + MAX_REPEAT_LEVEL * NUM_OBJECTS / 2, 120, 400);
+        text(l52 + " / " + MAX_REPEAT_LEVEL * NUM_OBJECTS / 2, 350, 400);
         break;
       case 6:
         sb.xpos = 80;
@@ -307,9 +352,16 @@ function displayScores() {
         sr.ypos = 480;
         sb.Display();
         sr.Display();
+        textSize(14);
         text("Level " + i + ":", 200, 480);
+        fill(170, 56, 78);
+        text(l51 + " / " + MAX_REPEAT_LEVEL * NUM_OBJECTS / 2, 120, 480);
+        text(l52 + " / " + MAX_REPEAT_LEVEL * NUM_OBJECTS / 2, 350, 480);
         break;
       default:
+        textSize(14);
+        fill(170, 56, 78);
+        break;
 
     }
   }
