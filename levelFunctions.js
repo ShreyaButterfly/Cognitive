@@ -248,7 +248,7 @@ function displayScores() {
 
   fill(255, 255, 255);
   rect(0, 0, 480, 640);
-  fill(170,56,78);
+  fill(170, 56, 78);
   //stroke("red");
   for (var i = 0; i <= NUM_LEVELS; i++) {
 
@@ -259,34 +259,34 @@ function displayScores() {
 
     switch (i) {
       case 1:
-        text("Level " + i + ":", 130, i * 50+55);
+        text("Level " + i + ":", 130, i * 50 + 55);
         bb[i].Display();
         sb[i].Display();
         break;
       case 2:
         br[i].Display();
         sr[i].Display();
-        text("Level " + i + ":", 130, i * 50+55);
+        text("Level " + i + ":", 130, i * 50 + 55);
         break;
       case 3:
         br[i].Display();
         sb[i].Display();
-        text("Level " + i + ":", 130, i * 50+55);
+        text("Level " + i + ":", 130, i * 50 + 55);
         break;
       case 4:
         bb[i].Display();
         sr[i].Display();
-        text("Level " + i + ":", 130, i * 50+55);
+        text("Level " + i + ":", 130, i * 50 + 55);
         break;
       case 5:
         bb[i].Display();
         br[i].Display();
-        text("Level " + i + ":", 130, i * 50+55);
+        text("Level " + i + ":", 130, i * 50 + 55);
         break;
       case 6:
         sb[i].Display();
         sr[i].Display();
-        text("Level " + i + ":", 130, i * 50+55);
+        text("Level " + i + ":", 130, i * 50 + 55);
         break;
       default:
 
