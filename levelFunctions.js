@@ -220,7 +220,6 @@ function mouseClicked() {
 function touchStarted() {
   mouseClicked ();
   }
-}
 
 //
 //
