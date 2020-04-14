@@ -3,7 +3,7 @@ function fLevelOne() {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
       bubbles[i].Display();
       shakeys[i].Display();
-      if (objectsCaptured >= 4) {
+      if (objectsCaptured >= OBJECTS_CHOSEN) {
         repeatLevel = repeatLevel + 1;
         resetObjects();
         if (repeatLevel > MAX_REPEAT_LEVEL) {
@@ -22,7 +22,7 @@ function fLevelTwo() {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
       bubbles[i].Display();
       shakeys[i].Display();
-      if (objectsCaptured >= 4) {
+      if (objectsCaptured >= OBJECTS_CHOSEN) {
         repeatLevel = repeatLevel + 1;
         resetObjects();
         if (repeatLevel > MAX_REPEAT_LEVEL) {
@@ -41,7 +41,7 @@ function fLevelThree() {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
       bubbles[i].Display();
       shakeys[i].Display();
-      if (objectsCaptured >= 4) {
+      if (objectsCaptured >= OBJECTS_CHOSEN) {
         repeatLevel = repeatLevel + 1;
         resetObjects();
         if (repeatLevel > MAX_REPEAT_LEVEL) {
@@ -59,7 +59,7 @@ function fLevelFour() {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
       bubbles[i].Display();
       shakeys[i].Display();
-      if (objectsCaptured >= 4) {
+      if (objectsCaptured >= OBJECTS_CHOSEN) {
         repeatLevel = repeatLevel + 1;
         resetObjects();
         if (repeatLevel > MAX_REPEAT_LEVEL) {
@@ -77,7 +77,7 @@ function fLevelFive() {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
       bubbles[i].Display();
       shakeys[i].Display();
-      if (objectsCaptured >= 4) {
+      if (objectsCaptured >= OBJECTS_CHOSEN) {
         repeatLevel = repeatLevel + 1;
         resetObjects();
         if (repeatLevel > MAX_REPEAT_LEVEL) {
@@ -95,7 +95,7 @@ function fLevelSix() {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
       bubbles[i].Display();
       shakeys[i].Display();
-      if (objectsCaptured >= 4) {
+      if (objectsCaptured >= OBJECTS_CHOSEN) {
         repeatLevel = repeatLevel + 1;
         resetObjects();
         if (repeatLevel > MAX_REPEAT_LEVEL) {
@@ -218,21 +218,7 @@ function mouseClicked() {
 // for IOS mouseClicked does not seem to work
 //
 function touchStarted() {
-  for (var i = 0; i < NUM_OBJECTS; i++) {
-    if (mouseX >= bubbles[i].xpos - 15 && mouseX <= bubbles[i].xpos + 15 &&
-      mouseY >= bubbles[i].ypos - 15 && mouseY <= bubbles[i].ypos + 15) {
-      objectsCaptured++;
-      bubbleCaptured++;
-      bubbles[i].xpos = -100;
-      bubbles[i].ypos = -100;
-    }
-    if (mouseX >= shakeys[i].xpos - 15 && mouseX <= shakeys[i].xpos + 15 &&
-      mouseY >= shakeys[i].ypos - 15 && mouseY <= shakeys[i].ypos + 15) {
-      objectsCaptured++;
-      shakeyCaptured++;
-      shakeys[i].xpos = -100;
-      shakeys[i].ypos = -100;
-    }
+  mouseClicked ();
   }
 }
 
