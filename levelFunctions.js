@@ -3,7 +3,7 @@ function fLevelOne() {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
       bubbles[i].Display();
       shakeys[i].Display();
-      if (objectsCaptured >= 4) {
+      if (objectsCaptured >= OBJECTS_CHOSEN) {
         repeatLevel = repeatLevel + 1;
         resetObjects();
         if (repeatLevel > MAX_REPEAT_LEVEL) {
@@ -24,7 +24,7 @@ function fLevelTwo() {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
       bubbles[i].Display();
       shakeys[i].Display();
-      if (objectsCaptured >= 4) {
+      if (objectsCaptured >= OBJECTS_CHOSEN) {
         repeatLevel = repeatLevel + 1;
         resetObjects();
         if (repeatLevel > MAX_REPEAT_LEVEL) {
@@ -45,7 +45,7 @@ function fLevelThree() {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
       bubbles[i].Display();
       shakeys[i].Display();
-      if (objectsCaptured >= 4) {
+      if (objectsCaptured >= OBJECTS_CHOSEN) {
         repeatLevel = repeatLevel + 1;
         resetObjects();
         if (repeatLevel > MAX_REPEAT_LEVEL) {
@@ -65,7 +65,7 @@ function fLevelFour() {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
       bubbles[i].Display();
       shakeys[i].Display();
-      if (objectsCaptured >= 4) {
+      if (objectsCaptured >= OBJECTS_CHOSEN) {
         repeatLevel = repeatLevel + 1;
         resetObjects();
         if (repeatLevel > MAX_REPEAT_LEVEL) {
@@ -85,7 +85,7 @@ function fLevelFive() {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
       bubbles[i].Display();
       shakeys[i].Display();
-      if (objectsCaptured >= 4) {
+      if (objectsCaptured >= OBJECTS_CHOSEN) {
         repeatLevel = repeatLevel + 1;
         resetObjects();
         if (repeatLevel > MAX_REPEAT_LEVEL) {
@@ -105,7 +105,7 @@ function fLevelSix() {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
       bubbles[i].Display();
       shakeys[i].Display();
-      if (objectsCaptured >= 4) {
+      if (objectsCaptured >= OBJECTS_CHOSEN) {
         repeatLevel = repeatLevel + 1;
         resetObjects();
         if (repeatLevel > MAX_REPEAT_LEVEL) {
