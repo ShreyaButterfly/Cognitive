@@ -278,8 +278,5 @@ function displayScores() {
 
     }
 
-
-
-
   }
 }
