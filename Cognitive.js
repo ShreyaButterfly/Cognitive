@@ -25,7 +25,7 @@ l11 = l12 = l21 = l22 = l31 = l32 = 0;
 l41 = l42 = l51 = l52 = l61 = l62 = 0;
 
 function setup() {
-  colorMode(RGB, 200);
+  //colorMode(RGB, 200);
   resetObjects();
   createCanvas(480, 640);
 }
