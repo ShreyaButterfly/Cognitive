@@ -1,3 +1,5 @@
+//cBubble.js is written by Shreya Balaji
+//Contact details : sbalaji2021@berkeleycarroll.org or shreyabutterfly@gmail.com
 class Bubble {
 
   constructor(x, y, R, G, B) {

@@ -1,3 +1,5 @@
+//cShakey.js is written by Shreya Balaji
+//Contact details : sbalaji2021@berkeleycarroll.org or shreyabutterfly@gmail.com
 class Shakey {
 
   constructor(x, y, R, G, B) {
