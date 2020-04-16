@@ -1,5 +1,6 @@
 // Cognitive.js is written by Shreya Balaji
-//Contact details : sbalaji2021@berkeleycarroll.org or shreyabutterfly@gmail.com
+// Contact details : sbalaji2021@berkeleycarroll.org or shreyabutterfly@gmail.com
+//Written in year 2020
 
 // This program displays a series of shaking
 // and static bubbles of different colors to
