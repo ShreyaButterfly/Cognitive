@@ -6,14 +6,15 @@
 // and static bubbles of different colors to
 // evaluate user preferences.
 //
+var socket;
 let bubbles = [];
 let shakeys = [];
 let gameLevel = 1;
 let repeatLevel = 1;
 let levelScore;
 let NUM_OBJECTS = 40;
-let MAX_REPEAT_LEVEL = 3;
-let OBJECTS_CHOSEN = 5;
+let MAX_REPEAT_LEVEL = 1;
+let OBJECTS_CHOSEN = 2;
 let NUM_LEVELS = 6;
 let bubbleCaptured = 0;
 let shakeyCaptured = 0;
@@ -33,7 +34,6 @@ function setup() {
   createCanvas(480, 640);
 }
 
-
 function draw() {
   fill("white");
   strokeWeight(3);
@@ -46,7 +46,10 @@ function draw() {
 
   if (gameLevel > NUM_LEVELS) {
     displayScores();
-    return;
+    saveCanvas("final_resuls.png", 'png');
+    exit();
+    //senddata(mouseX, mouseY);
+    //return;
   }
 
   if (gameLevel == 1) {
