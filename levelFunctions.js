@@ -1,3 +1,5 @@
+//levelFunctions.js is written by Shreya Balaji
+//Contact details : sbalaji2021@berkeleycarroll.org or shreyabutterfly@gmail.com
 function fLevelOne() {
   if (gameLevel == 1 && repeatLevel <= MAX_REPEAT_LEVEL) {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
