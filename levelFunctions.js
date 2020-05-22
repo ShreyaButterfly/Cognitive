@@ -132,8 +132,8 @@ function resetObjects() {
 
   if (gameLevel == 6) {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
-      bubbles.push(new Bubble(random(20, 400), random(60, 600), 0, 0, 255));
-      shakeys.push(new Shakey(random(20, 400), random(60, 600), 0, 0, 255));
+      bubbles.push(new Bubble(random(20, 400), random(60, 600), 0, 0, 0));
+      shakeys.push(new Shakey(random(20, 400), random(60, 600), 0, 0, 0));
     }
   } else if (gameLevel == 2) {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
@@ -176,8 +176,8 @@ function resetLevel() {
 
   if (gameLevel == 6) {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
-      bubbles.push(new Bubble(random(20, 400), random(60, 600), 0, 0, 255));
-      shakeys.push(new Shakey(random(20, 400), random(60, 600), 0, 0, 255));
+      bubbles.push(new Bubble(random(20, 400), random(60, 600), 0, 0, 0));
+      shakeys.push(new Shakey(random(20, 400), random(60, 600), 0, 0, 0));
     }
   } else if (gameLevel == 2) {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
