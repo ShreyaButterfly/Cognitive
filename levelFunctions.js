@@ -143,21 +143,21 @@ function resetObjects() {
   } else if (gameLevel == 3) {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
       bubbles.push(new Bubble(random(20, 400), random(60, 600), 255, 0, 0));
-      shakeys.push(new Shakey(random(20, 400), random(60, 600), 0, 0, 255));
+      shakeys.push(new Shakey(random(20, 400), random(60, 600), 0, 0, 0));
     }
   } else if (gameLevel == 5) {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
-      bubbles.push(new Bubble(random(20, 400), random(60, 600), 0, 0, 255));
+      bubbles.push(new Bubble(random(20, 400), random(60, 600), 0, 0, 0));
       shakeys.push(new Shakey(random(20, 400), random(60, 600), 255, 0, 0));
     }
   } else if (gameLevel == 1) {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
-      bubbles.push(new Bubble(random(20, 400), random(60, 600), 0, 0, 255));
+      bubbles.push(new Bubble(random(20, 400), random(60, 600), 0, 0, 0));
       shakeys.push(new Bubble(random(20, 400), random(60, 600), 255, 0, 0));
     }
   } else if (gameLevel == 4) {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
-      bubbles.push(new Shakey(random(20, 400), random(60, 600), 0, 0, 255));
+      bubbles.push(new Shakey(random(20, 400), random(60, 600), 0, 0, 0));
       shakeys.push(new Shakey(random(20, 400), random(60, 600), 255, 0, 0));
     }
   }
@@ -187,21 +187,21 @@ function resetLevel() {
   } else if (gameLevel == 3) {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
       bubbles.push(new Bubble(random(20, 400), random(60, 600), 255, 0, 0));
-      shakeys.push(new Shakey(random(20, 400), random(60, 600), 0, 0, 255));
+      shakeys.push(new Shakey(random(20, 400), random(60, 600), 0, 0, 0));
     }
   } else if (gameLevel == 5) {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
-      bubbles.push(new Bubble(random(20, 400), random(60, 600), 0, 0, 255));
+      bubbles.push(new Bubble(random(20, 400), random(60, 600), 0, 0, 0));
       shakeys.push(new Shakey(random(20, 400), random(60, 600), 255, 0, 0));
     }
   } else if (gameLevel == 1) {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
-      bubbles.push(new Bubble(random(20, 400), random(60, 600), 0, 0, 255));
+      bubbles.push(new Bubble(random(20, 400), random(60, 600), 0, 0, 0));
       shakeys.push(new Bubble(random(20, 400), random(60, 600), 255, 0, 0));
     }
   } else if (gameLevel == 4) {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
-      bubbles.push(new Shakey(random(20, 400), random(60, 600), 0, 0, 255));
+      bubbles.push(new Shakey(random(20, 400), random(60, 600), 0, 0, 0));
       shakeys.push(new Shakey(random(20, 400), random(60, 600), 255, 0, 0));
     }
   }
@@ -263,8 +263,8 @@ function touchStarted() {
 function displayScores() {
   let br = new Bubble(20, 50, 255, 0, 0);
   let sr = new Shakey(20, 50, 255, 0, 0);
-  let bb = new Bubble(20, 50, 0, 0, 255);
-  let sb = new Shakey(20, 50, 0, 0, 255)
+  let bb = new Bubble(20, 50, 0, 0, 0);
+  let sb = new Shakey(20, 50, 0, 0, 0)
 
   fill(255, 255, 255);
   rect(0, 0, 480, 640);
