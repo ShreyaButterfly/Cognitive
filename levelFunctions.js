@@ -1,5 +1,7 @@
 //levelFunctions.js is written by Shreya Balaji
 //Contact details : sbalaji2021@berkeleycarroll.org or shreyabutterfly@gmail.com
+
+//level 1 of game
 function fLevelOne() {
   if (gameLevel == 1 && repeatLevel <= MAX_REPEAT_LEVEL) {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
@@ -20,7 +22,7 @@ function fLevelOne() {
   }
 }
 
-
+//level 2 of game
 function fLevelTwo() {
   if (gameLevel == 2 && repeatLevel <= MAX_REPEAT_LEVEL) {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
@@ -41,7 +43,7 @@ function fLevelTwo() {
   }
 }
 
-
+//level 3 of game
 function fLevelThree() {
   if (gameLevel == 3 && repeatLevel <= MAX_REPEAT_LEVEL) {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
@@ -60,8 +62,7 @@ function fLevelThree() {
       }
     }
   }
-}
-
+}//level 4 of game
 function fLevelFour() {
   if (gameLevel == 4 && repeatLevel <= MAX_REPEAT_LEVEL) {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
@@ -82,6 +83,7 @@ function fLevelFour() {
   }
 }
 
+//level 5 of game
 function fLevelFive() {
   if (gameLevel == 5 && repeatLevel <= MAX_REPEAT_LEVEL) {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
@@ -102,6 +104,7 @@ function fLevelFive() {
   }
 }
 
+//level 6 of game
 function fLevelSix() {
   if (gameLevel == 6 && repeatLevel <= MAX_REPEAT_LEVEL) {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
@@ -130,6 +133,7 @@ function resetObjects() {
   objectsCaptured = 0;
   //repeatLevel=0;
 
+//bubble colors and placement
   if (gameLevel == 6) {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
       bubbles.push(new Bubble(random(20, 400), random(60, 600), 0, 0, 0));
@@ -258,8 +262,7 @@ function touchStarted() {
 
 //
 //
-//
-
+//displaying game scores
 function displayScores() {
   let br = new Bubble(20, 50, 255, 0, 0);
   let sr = new Shakey(20, 50, 255, 0, 0);
