@@ -12,6 +12,7 @@ function fLevelOne() {
         resetObjects();
         if (repeatLevel > MAX_REPEAT_LEVEL) {
           gameLevel = gameLevel + 1;
+          //how many still bubbles/shaky bubbles are captured
           l11 += bubbleCaptured;
           l12 += shakeyCaptured;
           resetLevel();
@@ -33,6 +34,7 @@ function fLevelTwo() {
         resetObjects();
         if (repeatLevel > MAX_REPEAT_LEVEL) {
           gameLevel = gameLevel + 1;
+          //how many still bubbles/shaky bubbles are captured
           l21 += bubbleCaptured;
           l22 += shakeyCaptured;
           resetLevel();
@@ -54,6 +56,7 @@ function fLevelThree() {
         resetObjects();
         if (repeatLevel > MAX_REPEAT_LEVEL) {
           gameLevel = gameLevel + 1;
+          //how many still bubbles/shaky bubbles are captured
           l31 += bubbleCaptured;
           l32 += shakeyCaptured;
           resetLevel();
@@ -73,6 +76,7 @@ function fLevelFour() {
         resetObjects();
         if (repeatLevel > MAX_REPEAT_LEVEL) {
           gameLevel = gameLevel + 1;
+          //how many still bubbles/shaky bubbles are captured
           l41 += bubbleCaptured;
           l42 += shakeyCaptured;
           resetLevel();
@@ -94,6 +98,7 @@ function fLevelFive() {
         resetObjects();
         if (repeatLevel > MAX_REPEAT_LEVEL) {
           gameLevel = gameLevel + 1;
+          //how many still bubbles/shaky bubbles are captured
           l51 += bubbleCaptured;
           l52 += shakeyCaptured;
           resetLevel();
@@ -115,6 +120,7 @@ function fLevelSix() {
         resetObjects();
         if (repeatLevel > MAX_REPEAT_LEVEL) {
           gameLevel = gameLevel + 1;
+          //how many still bubbles/shaky bubbles are captured
           l61 += bubbleCaptured;
           l62 += shakeyCaptured;
           resetLevel();
@@ -125,7 +131,7 @@ function fLevelSix() {
   }
 }
 
-
+//this is to bring all objects back to normal after a game is complete/at the start of a new game
 function resetObjects() {
 
   bubbles = [];
@@ -133,7 +139,7 @@ function resetObjects() {
   objectsCaptured = 0;
   //repeatLevel=0;
 
-//bubble colors and placement
+//bubble colors (red vs. blue) and placement on the screen
   if (gameLevel == 6) {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
       bubbles.push(new Bubble(random(20, 400), random(60, 600), 0, 0, 0));
@@ -156,7 +162,7 @@ function resetObjects() {
     }
   } else if (gameLevel == 1) {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
-      bubbles.push(new Bubble(random(20, 400), random(60, 600), 0, 0, 0));
+      bubbles.push(new Bubble(random(20, 400), random(60, 600), 25, 25, 25));
       shakeys.push(new Bubble(random(20, 400), random(60, 600), 255, 0, 0));
     }
   } else if (gameLevel == 4) {
@@ -168,7 +174,7 @@ function resetObjects() {
 
 }
 
-
+//this is to bring all levels back to normal after a game is complete/at the start of a new game
 function resetLevel() {
 
   bubbles = [];
@@ -200,7 +206,7 @@ function resetLevel() {
     }
   } else if (gameLevel == 1) {
     for (let i = 0; i < NUM_OBJECTS / 2; i++) {
-      bubbles.push(new Bubble(random(20, 400), random(60, 600), 0, 0, 0));
+      bubbles.push(new Bubble(random(20, 400), random(60, 600), 25, 25, 25));
       shakeys.push(new Bubble(random(20, 400), random(60, 600), 255, 0, 0));
     }
   } else if (gameLevel == 4) {
